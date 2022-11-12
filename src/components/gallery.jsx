@@ -11,7 +11,7 @@ export const Gallery = ({ gallerys }) => {
     <ul className={css.gallery}>
       {gallerys.map(({ id, poster_path = '', title, name }) => (
         <li key={id} className={css.galleryItem}>
-          <Link to={`/movie/${id}`} className={css.galleryLink}>
+          <Link to={`/movies/${id}`} className={css.galleryLink}>
             <img
               className={css.galleryImg}
               loading="lazy"

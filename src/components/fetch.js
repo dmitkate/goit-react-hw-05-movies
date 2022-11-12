@@ -23,6 +23,20 @@ export const FetchAPIDetail= async(movieId) => {
      const response = await axios.get(
         `/movie/${movieId}?api_key=${api_key}&language=en-USe`
     );
-
+    
+    return response.data;
+}
+export const FetchAPICast= async(movieId) => {
+     const response = await axios.get(
+        `movie/${movieId}/credits?api_key=${api_key}&language=en-US`
+    );
+    
+    return response.data;
+}
+export const FetchAPIReviews= async(movieId) => {
+     const response = await axios.get(
+        `movie/${movieId}/reviews?api_key=${api_key}&language=en-US&page=1`
+    );
+    
     return response.data;
 }

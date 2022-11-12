@@ -26,8 +26,8 @@ export const Movies = () => {
      console.log('ENTER Name!!!');
       return;
     }
-    this.props.search(name);
-        setName('');
+    //  this.props.search(name);
+         setName('');
   };
         return (
             <main >
