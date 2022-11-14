@@ -1,12 +1,12 @@
 import { Outlet, useParams, useLocation} from "react-router-dom";
 import { useState,useEffect } from "react";
-import { FetchAPIDetail } from "../fetch";
+import { FetchAPIDetail } from "../components/fetch";
 import { Link } from 'react-router-dom';
-import css from '../app.module.css';
+import css from 'components/app.module.css';
 export const MoviesDetail = () => {
   const [id, setId] = useState([]); 
   const { movieId } = useParams();
-const location = useLocation();
+  const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
     useEffect(() => {
      
