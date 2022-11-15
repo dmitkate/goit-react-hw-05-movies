@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Gallery } from 'components/gallery.jsx';
 import css from 'components/app.module.css';
 //import { Link } from 'react-router-dom';
-export function HomePage() {
+function HomePage() {
     const [trends, setTrends] = useState([]);
 
     useEffect(() => {
@@ -17,3 +17,4 @@ export function HomePage() {
        
     )
 }
+export default HomePage;

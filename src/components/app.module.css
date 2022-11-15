@@ -12,20 +12,17 @@ a{
 }
 .gallery{
     display: flex;
-flex-flow: column wrap;
-    
+    flex-flow: column wrap;    
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: flex-start;
     padding:  0;
         
 }
-.galleryItem{
-    
-
+.galleryItem{   
     list-style: none;
-margin-left: 5px;
-margin-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-transform: uppercase;
     line-height: 1.16;
     font-size: 15px;
@@ -45,11 +42,12 @@ width: 100%;
 }
 .galleryItem:hover{
     transform: scale(1.05);
-    filter: drop-shadow(0px 4px 4px rgba(173, 173, 173, 0.6));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));
 }
 /* ------------homepage----------------- */
 .galleryTitle{
   text-transform: uppercase;
+text-align: center;
     color: rgb(255, 255, 255);
     font-weight: 500;
     font-size: 33;

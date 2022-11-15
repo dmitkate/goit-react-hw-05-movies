@@ -1,9 +1,11 @@
 import { Outlet, useParams, useLocation} from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Suspense } from "react";
 import { FetchAPIDetail } from "../components/fetch";
 import { Link } from 'react-router-dom';
-import css from 'components/app.module.css';
-export const MoviesDetail = () => {
+//import css from 'components/app.module.css';
+const MoviesDetail = () => {
+  
   const [id, setId] = useState([]); 
   const { movieId } = useParams();
   const location = useLocation();
@@ -14,7 +16,7 @@ export const MoviesDetail = () => {
     }, [movieId])
     if (!id) return;
   return ( 
-    <main className={css.galleryTitle}>
+    <main >
       <div>
         <Link to={backLinkHref}>Back home</Link>
        <img
@@ -28,8 +30,13 @@ export const MoviesDetail = () => {
        
      <p>{id.overview}</p> 
       </div>
-      <Link to={'/cast'}>cast</Link>
-      <Outlet />
+        <Suspense fallback={<div>Loading subpage...</div>}>
+      <Link to={`cast`}>cast</Link>
+      <Link to={`reviews`}>reviews</Link>
+    
+        <Outlet />
+      </Suspense>
     </main>
   );
 };
+export default MoviesDetail;

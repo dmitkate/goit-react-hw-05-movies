@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react';
 import { Gallery } from 'components/gallery.jsx';
 import { FetchAPIName } from '../components/fetch.js';
 import { useSearchParams } from 'react-router-dom';
-export const Movies = () => {
+const Movies = () => {
     //const [name, setName] = useState('');
     const [masName, setMasName] = useState([]);
     const [searchParam, setSearchParam] = useSearchParams();
@@ -11,7 +11,7 @@ export const Movies = () => {
     useEffect(() => {
 
         const query = searchParam.get('query')
-        //if (query.trim() === '') {
+       
     if (!query) {
       return;
     }
@@ -19,21 +19,13 @@ export const Movies = () => {
      },[searchParam])
  
     const  handleNameChange = e => {
-        //setName(e.currentTarget.value.toLowerCase());
+       
         setSearchParam({query: e.currentTarget.value})
     };
 
     const handleSubmit = e => {
     e.preventDefault();
 
-    //if (name.trim() === '') {
-    // console.log('ENTER Name!!!');
-    //  return;
-    //}
-        
-    //  this.props.search(name);
-        //setName('');
-        //setSearchParam({query:e.currentTarget.value})
     };
     
         return (
@@ -56,3 +48,4 @@ export const Movies = () => {
     };
 
 
+export default Movies;
