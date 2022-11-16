@@ -34,8 +34,8 @@ const MoviesDetail = () => {
      <p>{id.overview}</p> </div>
       </div>
        
-      <Link className={css.linkNav} to={`cast`}>cast</Link>
-      <Link className={css.linkNav} to={`reviews`}>reviews</Link>
+      <Link className={css.linkNav} to={`cast`} state={location.state}>cast</Link>
+      <Link className={css.linkNav} to={`reviews`} state={location.state}>reviews</Link>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
