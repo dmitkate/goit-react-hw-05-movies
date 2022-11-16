@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { FetchAPIReviews } from "./fetch";
-//import css from './app.module.css';
+import css from './app.module.css';
 const Reviews = () => {
   const [reviews, setReviews] = useState();
   const { movieId } = useParams();
@@ -17,10 +17,10 @@ const Reviews = () => {
   
   if (!reviews) return;
     
-   return (reviews.results.length ?(<ul>
+   return (reviews.results.length ?(<ul >
       {reviews.results.map(({id, author, content}) => (
-          <li key={id}>
-              <h3>{author}</h3>
+          <li key={id} className={css.reviewsItem}>
+              <h4 className={css.reviewsH}>{author}</h4>
               <p>{content}</p>
         </li>
       ))}
